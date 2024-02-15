@@ -15,8 +15,7 @@ I'm neither a CSS nor JS expert, so feel free to help as you can.
 
 1. Clone this repository and move it to the spicetify themes folder
 ```bash
-git clone https://github.com/zDyanTB/pywal-spicetify.git
-mv pywal-spicetify/ ~/.config/spicetify/Themes
+git clone https://github.com/zDyanTB/pywal-spicetify.git ~/.config/spicetify/Themes/pywal-spicetify
 ```
 2. Apply theme with
 ```bash
