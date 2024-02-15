@@ -6,9 +6,9 @@ I'm neither a CSS nor JS expert, so feel free to help as you can.
 ## Screenshots
 ![Pastel](assets/screenshot1.png?raw=true)
 
-![Monochromatic](assets/screenshot1.png?raw=true)
+![Monochromatic](assets/screenshot2.png?raw=true)
 
-![Vibrant](assets/screenshot1.png?raw=true)
+![Vibrant](assets/screenshot3.png?raw=true)
 
 ---
 ## Installation
