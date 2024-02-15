@@ -1,6 +1,6 @@
 :root {
-    --corner-radius: 10px;
-    --bar-cover-art-size: 40px;
+    --corner-radius: 20px;
+    --bar-cover-art-size: 50px;
     --scrollbar-vertical-size: 10px;
     --scrollbar-horizontal-size: 10px;
     --bar-height: 90px;
@@ -53,6 +53,7 @@ body {
 }
 
 .Root__now-playing-bar {
+    padding: 0px 15px;
     background-color: var(--spice-player);
     border-radius: 0 0 var(--corner-radius) var(--corner-radius) !important;
     grid-area: now-playing-bar !important;
@@ -90,16 +91,17 @@ body {
     padding-inline-end: 16px !important;
 }
 .progress-bar {
-    --progress-bar-height: 2px;
+    --progress-bar-height: 3px;
     --progress-bar-radius: 0;
     --fg-color: var(--spice-button);
     --bg-color: rgba(var(--spice-rgb-text), 0.2);
+
 }
 
 /* add gradient to player bar */
 .main-nowPlayingBar-container {
     background-color: unset;
-    background: radial-gradient(ellipse at right 50% bottom -80px, rgba(var(--spice-rgb-sidebar), 0.55), var(--spice-main) 60%) !important;
+    background: radial-gradient(ellipse at right 50% bottom -80px, rgba(var(--spice-rgb-sidebar), 1), var(--spice-main) 70%) !important;
     border-radius: 0 0 var(--corner-radius) var(--corner-radius) !important;
     border-top: 0;
     min-width: 518px;
@@ -137,13 +139,13 @@ body {
     width: unset;
     height: 25px;
     top: -35px;
-    padding: 0 5px;
-    border-radius: 4px;
+    padding: 5px;
+    border-radius: 6px;
     text-align: center;
     color: var(--spice-text);
     background-color: var(--spice-button);
     opacity: 0;
-    transition: opacity 0.2s linear, left 0.2s linear;
+    transition: opacity 0.4s ease-in-out, left 0.4s ease-in-out;
 }
 .playback-bar:hover .prog-tooltip {
     opacity: 1;
@@ -162,7 +164,7 @@ body {
 .main-repeatButton-button,
 .main-skipBackButton-button,
 .main-shuffleButton-button {
-    color: var(--spice-text);
+    color: var(--spice-subtext);
 }
 .player-controls__left,
 .player-controls__right {
@@ -197,8 +199,10 @@ body {
 .main-nowPlayingWidget-coverArt .cover-art {
     width: var(--bar-cover-art-size) !important;
     height: var(--bar-cover-art-size) !important;
+    box-shadow: inset 0 0 10px 5px rgba(var(--spice-sidebar) 0.8);
     background-color: transparent;
 }
+
 .main-nowPlayingWidget-nowPlaying {
     justify-content: center;
 }
@@ -239,15 +243,15 @@ body {
 .main-yourLibraryX-isScrolled {
     box-shadow: none !important;
 }
-/* round playlist images */
+/* rounded square playlist images */
 .x-entityImage-imageContainer {
-    border-radius: 50% !important;
+    border-radius: 25%;
     background-color: transparent;
     width: 40px !important;
     height: 40px !important;
     align-self: center;
-    box-shadow: none !important;
 }
+
 li div:has(> .x-entityImage-imageContainer),
 li div:has(> .main-yourLibraryX-rowCover) {
     justify-content: center;
@@ -420,13 +424,13 @@ li > div::after {
 #dribbblish-back-shadow {
     z-index: 5;
     grid-area: main-view / main-view / now-playing-bar / main-view;
-    box-shadow: 0 0 10px 3px #0000003b;
+    box-shadow: rgba(0, 0, 0, 0.85) 0px 0px 20px 4px;
     border-radius: var(--corner-radius);
     pointer-events: none;
 }
 
 /* add fade effect to playlist scrolllist */
-.os-viewport.os-viewport-native-scrollbars-invisible[fade="full"] {
+/* .os-viewport.os-viewport-native-scrollbars-invisible[fade="full"] {
     -webkit-mask-image: linear-gradient(transparent 0%, black 10%, black 90%, transparent 100%);
     mask-image: linear-gradient(transparent 0%, black 10%, black 90%, transparent 100%);
 }
@@ -437,19 +441,45 @@ li > div::after {
 .os-viewport.os-viewport-native-scrollbars-invisible[fade="bottom"] {
     -webkit-mask-image: linear-gradient(black 90%, transparent 100%);
     mask-image: linear-gradient(black 90%, transparent 100%);
+} */
+
+.os-theme-spotify
+    > .os-scrollbar-vertical
+    > .os-scrollbar-track
+    > .os-scrollbar-handle {
+    background-color: var(--text-subdued) !important;
+    border-radius: var(--corner-radius);
+    width: 3px;
+}
+.os-theme-spotify
+    > .os-scrollbar-vertical
+    > .os-scrollbar-track
+    > .os-scrollbar-handle:hover {
+    border-radius: var(--corner-radius);
+    width: 6px;
+}
+
+.main-view-container__scroll-node > .os-scrollbar-vertical {
+    top: 5px !important;
+    right: 5px !important;
+}
+.os-scrollbar-handle {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 /* style input els */
 input {
     background-color: unset !important;
-    border-bottom: solid 1px var(--spice-text) !important;
-    border-radius: 0 !important;
+    border-bottom: solid 1px var(--spice-sidebar) !important;
+    border-radius: 10px !important;
     padding: 6px 10px 6px 48px;
     color: var(--spice-text) !important;
 }
 .Root__nav-bar input {
-    border-bottom: solid 1px var(--spice-sidebar-text) !important;
-    color: var(--spice-sidebar-text) !important;
+    border-bottom: solid 1px var(--spice-sidebar) !important;
+    color: var(--spice-text) !important;
 }
 .Root__nav-bar input::placeholder {
     color: rgba(var(--spice-rgb-sidebar-text), 0.5) !important;
@@ -569,10 +599,10 @@ input {
     left: 82px;
 }
 .main-coverSlotExpanded-container img {
-    border-radius: 4px;
+    border-radius: 6px;
 }
 .cover-art {
-    border-radius: 4px;
+    border-radius: 6px;    
 }
 .left-sidebar-collapsed .Root__nav-bar {
     width: 72px;
@@ -636,7 +666,7 @@ input {
 /* style added sidebar images */
 .main-rootlist-rootlistItem a {
     align-items: center;
-    border-radius: 4px;
+    border-radius: 6px;
     display: flex;
     height: 56px;
     gap: 12px;
@@ -683,7 +713,7 @@ img.playlist-picture[src$=".svg"] {
     margin-right: 8px;
     padding-left: 0 !important;
     padding-right: 8px !important;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 .dribs-playlist-list {
     overflow: hidden;
