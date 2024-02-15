@@ -1,10 +1,10 @@
-A sligtly modified version of [Dribbblish](https://github.com/spicetify/spicetify-themes/tree/master/Dribbblish) to adapt your color scheme with pywal.
+A sligtly modified version of [Dribbblish](https://github.com/spicetify/spicetify-themes/tree/master/Dribbblish) adapted to match your color scheme with pywal.
 
-I'm no CSS neither JS expert. Feel free to help as you can.
+I'm no CSS neither JS expert. So feel free to help as you can.
 ---
 # Installation
 
-1. Clone this repo and move it to spicetify themes folder
+1. Clone this repository and move it to the spicetify themes folder
 ```bash
 git clone https://github.com/zDyanTB/pywal-spicetify.git
 mv pywal-spicetify/ ~/.config/spicetify/Themes
@@ -17,5 +17,5 @@ spicetify apply
 3. Enjoy!
 
 ## Notes
-Name may be changed sometime
-I didn't create this theme, i only modified it.
+* Name may be changed sometime
+* I didn't create this theme, i only modified it.
