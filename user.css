@@ -42,6 +42,8 @@ body {
         arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic, sans-serif;
     font-family: var(--glue-font-family);
     letter-spacing: normal;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .Root__top-container {
